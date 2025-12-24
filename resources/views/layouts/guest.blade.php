@@ -13,16 +13,15 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="apple-mobile-web-app-title" content="TemuBarang">
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-        <link rel="manifest" href="/build/manifest.webmanifest">
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg">
+        <link rel="manifest" href="/manifest.json">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-5Xxr1MMR.css') }}">
-        <script src="{{ asset('build/assets/app-CiZ6hk-B.js') }}" defer></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">

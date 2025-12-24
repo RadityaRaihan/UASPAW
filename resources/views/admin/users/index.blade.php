@@ -92,10 +92,8 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div class="flex space-x-2">
-                                            <button onclick="alert('Fitur detail user akan segera hadir')" class="text-indigo-600 hover:text-indigo-900">Detail</button>
-                                            @if($user->id !== auth()->id())
-                                                <button onclick="alert('Fitur suspend user akan segera hadir')" class="text-orange-600 hover:text-orange-900">Suspend</button>
-                                            @endif
+                                            <a href="{{ route('admin.users.show', $user) }}" class="text-indigo-600 hover:text-indigo-900">Detail</a>
+                                            {{-- Suspend button removed as requested --}}
                                         </div>
                                     </td>
                                 </tr>

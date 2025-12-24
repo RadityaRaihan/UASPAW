@@ -45,7 +45,7 @@ class ItemController extends Controller
             'type' => 'required|in:lost,found',
             'category' => 'required|string',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:8192',
             'latitude' => 'required',
             'longitude' => 'required',
             'phone' => 'required|string|max:20',

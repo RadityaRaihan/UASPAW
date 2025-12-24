@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>
+      .logo-bg { fill: #4f46e5; }
+      .logo-icon { fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="192" height="192" class="logo-bg" rx="24"/>
+  <!-- Search Icon -->
+  <g transform="translate(48, 48)">
+    <circle cx="28" cy="28" r="20" class="logo-icon"/>
+    <line x1="42" y1="42" x2="54" y2="54" class="logo-icon"/>
+  </g>
+</svg>

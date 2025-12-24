@@ -13,8 +13,8 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="TemuBarang">
         
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-        <link rel="icon" type="image/png" href="/icons/icon-192x192.png">
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg">
+        <link rel="icon" type="image/svg+xml" href="/icons/icon-192x192.svg">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,800&display=swap" rel="stylesheet" />
@@ -22,8 +22,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-        <link rel="stylesheet" href="{{ asset('build/assets/app-5Xxr1MMR.css') }}">
-        <script src="{{ asset('build/assets/app-CiZ6hk-B.js') }}" defer></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
             /* Smooth scrolling untuk PWA */

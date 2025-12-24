@@ -1,0 +1,74 @@
+{
+  "name": "TemuBarang - Temukan Kembali Milikmu",
+  "short_name": "TemuBarang",
+  "description": "Platform tercepat untuk melaporkan dan menemukan barang hilang di sekitar Anda.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#4f46e5",
+  "background_color": "#ffffff",
+  "screenshots": [
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-150x150.svg",
+      "sizes": "150x150",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["utilities", "lifestyle"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Lapor Barang",
+      "short_name": "Lapor",
+      "description": "Lapor barang hilang Anda",
+      "url": "/items/create",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Cari Barang",
+      "short_name": "Cari",
+      "description": "Cari barang yang hilang",
+      "url": "/?search=true",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

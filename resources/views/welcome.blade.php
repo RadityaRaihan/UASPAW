@@ -5,12 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title>TemuBarang - Temukan Kembali Milikmu</title>
 
-        <link rel="manifest" href="/build/manifest.webmanifest"> <meta name="theme-color" content="#4f46e5">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#4f46e5">
         <meta name="description" content="Platform tercepat untuk melaporkan dan menemukan barang hilang di sekitar Anda.">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="TemuBarang">
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+        <meta name="msapplication-TileColor" content="#4f46e5">
+        <meta name="msapplication-config" content="/browserconfig.xml">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg">
+        <link rel="icon" type="image/svg+xml" href="/icons/icon-192x192.svg">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-192x192.svg">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-150x150.svg">
 
         <meta property="og:type" content="website">
         <meta property="og:title" content="TemuBarang - Temukan Kembali Milikmu">
@@ -19,8 +26,7 @@
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600,800&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('build/assets/app-5Xxr1MMR.css') }}">
-        <script src="{{ asset('build/assets/app-CiZ6hk-B.js') }}" defer></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
             @keyframes float {
@@ -131,9 +137,39 @@
         <script>
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/build/sw.js')
-                        .then(reg => console.log('PWA: Service Worker Active'))
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(reg => {
+                            console.log('PWA: Service Worker Active', reg);
+                            // Check for updates periodically
+                            setInterval(() => reg.update(), 60000);
+                        })
                         .catch(err => console.log('PWA: Registration Failed', err));
+                });
+            }
+
+            // Install prompt handling
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                // Show install button
+                const installBtn = document.getElementById('install-btn');
+                if (installBtn) {
+                    installBtn.style.display = 'block';
+                }
+            });
+
+            // Handle install button click
+            const installBtn = document.getElementById('install-btn');
+            if (installBtn) {
+                installBtn.addEventListener('click', async () => {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        const { outcome } = await deferredPrompt.userChoice;
+                        console.log(`User response: ${outcome}`);
+                        deferredPrompt = null;
+                        installBtn.style.display = 'none';
+                    }
                 });
             }
         </script>

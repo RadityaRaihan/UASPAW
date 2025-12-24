@@ -97,4 +97,17 @@ class AdminController extends Controller
 
         return back()->with('success', 'Status laporan berhasil diupdate.');
     }
+
+    public function showUser(User $user)
+    {
+        $stats = [
+            'total_reports' => $user->items()->count(),
+            'open_reports' => $user->items()->where('status', 'open')->count(),
+            'closed_reports' => $user->items()->where('status', 'closed')->count(),
+        ];
+
+        $items = $user->items()->latest()->paginate(10);
+
+        return view('admin.users.show', compact('user', 'stats', 'items'));
+    }
 }
