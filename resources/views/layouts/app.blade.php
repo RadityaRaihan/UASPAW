@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-        <link rel="stylesheet" href="{{ asset('build/assets/app-BjvJC7Um.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app-5Xxr1MMR.css') }}">
         <script src="{{ asset('build/assets/app-CiZ6hk-B.js') }}" defer></script>
 
         <style>

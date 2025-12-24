@@ -19,7 +19,7 @@
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600,800&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('build/assets/app-BjvJC7Um.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app-5Xxr1MMR.css') }}">
         <script src="{{ asset('build/assets/app-CiZ6hk-B.js') }}" defer></script>
 
         <style>
